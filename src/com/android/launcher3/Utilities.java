@@ -863,4 +863,9 @@ public final class Utilities {
     public static boolean useSleepGesture(Context context) {
         return getPrefs(context).getBoolean(SLEEP_GESTURE, true);
     }
+
+    public static boolean isWorkspaceEditAllowed(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_EDIT, true);
+    }
 }
